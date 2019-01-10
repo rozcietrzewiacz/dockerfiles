@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 ROOT=/usr/src/gitiles
@@ -27,4 +27,5 @@ fi
 
 PROPERTIES="$PROPERTIES --jvm_flag=-Dcom.google.gitiles.sourcePath=$ROOT"
 
-exec "${ROOT}/bazel-bin/gitiles-dev/dev" $PROPERTIES
+# shellcheck disable=SC2086
+exec "${ROOT}/bin/gitiles-dev/dev" $PROPERTIES

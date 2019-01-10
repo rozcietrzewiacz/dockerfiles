@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -o pipefail
 
 # add the correct user perms
 gpasswd -a root libvirt
@@ -16,4 +17,5 @@ iptables -t nat -A POSTROUTING -s 172.20.0.1/16 -j MASQUERADE
 # start the virtlogd daemon
 exec virtlogd --daemon &
 
+# shellcheck disable=SC2068
 exec $@

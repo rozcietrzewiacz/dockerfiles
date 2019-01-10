@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster-slim
 LABEL maintainer "Jessie Frazelle <jess@linux.com>"
 
 # run
